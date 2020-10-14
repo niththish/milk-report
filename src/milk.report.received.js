@@ -17,10 +17,12 @@ function receivedController($scope,$http){
             if(value.received==true){
                 $scope.receivedcustomers.push(value);
                 $scope.total+=parseInt(value.receivedAmount);
+                
+                
+        console.log($scope.total);
             }
         })
         
-        console.log($scope.total);
     
         
     })
