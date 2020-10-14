@@ -1,0 +1,26 @@
+<style>
+    .btnColor{
+        background-color: #ff3d3d;
+    }
+    .heading{
+        color: #2a79e8;
+    }
+</style>
+
+<div class='container'>
+    <blockquote class='blockquote text-center heading mt-4 '><h5>Received Acknowledgement</h5></blockquote>
+    
+    <form class='mt-5' name="myForm"  novalidate>    
+        <div class='col-12'>
+            <input class='form-control mb-4' type="text" style='border: 0px; border-bottom: 1px solid  #ced4da;' 
+            name="receivedAmount"  placeholder="received amount" ng-model="amount" required>
+            <span id='error' ng-show="myForm.receivedAmount.$touched && myForm.receivedAmount.$error.required">Enter the received amount.</span>
+        </div>
+        <div class='col-12'>
+            <input type="text" class="btn text-white btn-block btnColor mb-4" value="Received"
+            ng-disabled="myForm.receivedAmount.$untouched || (myForm.receivedAmount.$touched && myForm.receivedAmount.$invalid)"
+            ng-click="received()">
+        </div>
+    </form>
+    
+</div>

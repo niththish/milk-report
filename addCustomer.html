@@ -1,0 +1,42 @@
+<style>
+    .btnColor{
+        background-color: #ff3d3d;
+    }
+    .heading{
+        color: #2a79e8;
+    }
+    #error{
+        color: #ff3d3d;
+    }
+</style>
+
+<div class='container'>
+    <blockquote class='blockquote text-center heading mt-4 '><h5>Add Customer</h5></blockquote>
+    <form class='mt-2' name="myForm" novalidate>
+        <div class="form-group col-12 mb-4" >
+            
+            <input class='form-control' type="text" style='border: 0px; border-bottom: 1px solid  #ced4da;'
+            name="customername"  placeholder="Customer name" ng-model="customername" required>
+            <span id='error' ng-show="myForm.customername.$touched && myForm.customername.$error.required">Username is required.</span>
+
+        </div>
+
+        <div class="form-group col-12 mb-4" >
+
+            <input class='form-control' type="tel" style='border: 0px; border-bottom: 1px solid  #ced4da;'
+            name="customernumber" ng-model="customernumber" placeholder="Phone number" ng-minlength="10"  ng-maxlength="10" required>
+            <span  id='error' ng-show="myForm.customernumber.$touched && myForm.customernumber.$error.required">phone number is required.</span>
+            <span id='error' ng-show="myForm.customernumber.$touched && (myForm.customernumber.$error.minlength || myForm.customernumber.$error.maxlength)">The phone number should be 10 digits</span>
+             
+        </div>
+        <div class="form-group col-12 " >
+
+            <input ng-click="addCustomer()" type='submit' class="btn text-white btn-block btnColor" value="Add"
+            ng-disabled="myForm.customername.$untouched || myForm.customernumber.$untouched || (myForm.customername.$touched && myForm.customername.$invalid) ||
+            (myForm.customernumber.$touched && myForm.customernumber.$invalid)">
+
+        </div>
+    </form>  
+
+    <p class='text-center'>{{data}}</p>
+</div>

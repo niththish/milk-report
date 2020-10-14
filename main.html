@@ -1,0 +1,25 @@
+<style>
+    .heading{
+        color: #2a79e8;
+    }
+</style>
+
+<div class="container">
+    <blockquote class='blockquote text-center mt-3 heading'><h5>All Customers Detail</h5></blockquote>
+
+    <div class='row'>
+        <div class='col-12'>
+            <input type="text" class='form-control pl-4' 
+            style="border: 0px;" placeholder="Search"
+            name="search" ng-model="search">
+        </div>
+    </div>
+    
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" ng-repeat="customer in customers | orderBy: '-name':true | filter:search ">
+            <blockquote class='blockquote mb-0'>
+                {{customer.name}}
+            </blockquote>
+        </li>
+    </ul>
+</div>

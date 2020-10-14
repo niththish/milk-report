@@ -1,0 +1,24 @@
+<style>
+    .heading{
+        color: #2a79e8;
+    }
+</style>
+
+<div class="container">
+    <blockquote class='blockquote text-center heading mt-3'><h5>send Message</h5></blockquote>
+    <div class='row'>
+        <div class='col-12'>
+            <input type="text" class='form-control pl-4' 
+            style="border: 0px;" placeholder="Search"
+            name="search" ng-model="search">
+        </div>
+    </div>
+    
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" ng-repeat="customer in sendcustomers | orderBy: '-name':true | filter:search ">
+            <blockquote class='blockquote mb-0'>
+                <a class='text-dark' ui-sref='sends({id:customer._id})'>{{customer.name}}</a>
+            </blockquote>
+        </li>
+    </ul>
+</div>
