@@ -10,16 +10,15 @@ function receivedController($scope,$http){
     $http.get('https://milk-report.herokuapp.com/').success(function(data){
         $scope.search;
         $scope.receivedcustomers=[];
-        $scope.total;
+        $scope.total=0;
         $scope.data=data;
         
         $scope.data.filter((value)=>{
             if(value.received==true){
                 $scope.receivedcustomers.push(value);
-                $scope.total+=parseInt(value.receivedAmount);
-                
-                
-        console.log($scope.total);
+                var val=parseInt(value.receivedAmount);
+                $scope.total+=val;
+                console.log($scope.total);
             }
         })
         
