@@ -13,7 +13,7 @@ function sentreceivedController($scope,$http,$stateParams){
             received:true,
             receivedAmount:$scope.amount
         };
-        $http.put("https://milk-report.herokuapp.com/received/"+$scope.id,JSON.stringify(data)).success(function(data){
+        $http.put("https://milk-report.herokuapp.com/sent/"+$scope.id,JSON.stringify(data)).success(function(data){
             $scope.data=data;
             
         })
