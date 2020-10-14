@@ -17,9 +17,9 @@
             <span id='error' ng-show="myForm.receivedAmount.$touched && myForm.receivedAmount.$error.required">Enter the received amount.</span>
         </div>
         <div class='col-12'>
-            <input type="text" class="btn text-white btn-block btnColor mb-4" value="Received"
+            <button class="btn text-white btn-block btnColor mb-4"
             ng-disabled="myForm.receivedAmount.$untouched || (myForm.receivedAmount.$touched && myForm.receivedAmount.$invalid)"
-            ng-click="received()">
+            ng-click="received()">Received</button>
         </div>
     </form>
     
