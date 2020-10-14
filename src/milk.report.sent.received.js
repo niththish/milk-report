@@ -15,6 +15,8 @@ function sentreceivedController($scope,$http,$stateParams){
         };
         $http.put("https://milk-report.herokuapp.com/sent/"+$scope.id,JSON.stringify(data)).success(function(data){
             $scope.data=data;
+            $scope.details="Inserted";
+            $scope.amount="";
             
         })
     }
