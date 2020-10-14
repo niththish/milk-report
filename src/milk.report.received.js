@@ -16,9 +16,8 @@ function receivedController($scope,$http){
         $scope.data.filter((value)=>{
             if(value.received==true){
                 $scope.receivedcustomers.push(value);
-                var val=parseInt(value.receivedAmount);
-                $scope.total+=val;
-                console.log($scope.total);
+                
+                console.log($scope.receivedcustomers);
             }
         })
         
