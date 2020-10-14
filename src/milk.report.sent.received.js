@@ -14,7 +14,7 @@ function sentreceivedController($scope){
         };
         $http.put("https://milk-report.herokuapp.com/received/"+$scope.id,JSON.stringify(data)).success(function(data){
             $scope.data=data;
-            console.log($scope.data);
+            
         })
     }
 }
