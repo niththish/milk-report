@@ -16,12 +16,11 @@ function receivedController($scope,$http){
         $scope.data.filter((value)=>{
             if(value.received==true){
                 $scope.receivedcustomers.push(value);
-                
-                console.log($scope.receivedcustomers);
+                $scope.total+=parseInt(value.receivedAmount);
             }
         })
         
-    
+    console.log($scope.total);
         
     })
     
