@@ -1,11 +1,11 @@
 angular.module('milkReport')
-.controller('sentreceivedController',['$scope',sentreceivedController])
+.controller('sentreceivedController',['$scope','$http',sentreceivedController])
 .component('sentreceivedComponent',{
     templateUrl:'receivedAcknowledge.html',
     controller:'sentreceivedController',
 })
 
-function sentreceivedController($scope){
+function sentreceivedController($scope,$http){
     $scope.amount;
     $scope.received=function(){
         var data={
