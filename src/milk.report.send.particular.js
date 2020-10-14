@@ -11,8 +11,7 @@ function sendparticularController($scope,$stateParams,$http){
     $scope.amount;
     $scope.sendcustomers=[];
 
-    console.log($scope.id);
-
+    
     $http.get('https://milk-report.herokuapp.com/').success(function(data){
         data.filter((value)=>{
             if(value._id===$scope.id){
@@ -30,7 +29,7 @@ function sendparticularController($scope,$stateParams,$http){
         };
         $http.put("https://milk-report.herokuapp.com/send/"+$scope.id,JSON.stringify(data)).success(function(data){
             $scope.data=data;
-            console.log($scope.data);
+            
         })
     
     }
