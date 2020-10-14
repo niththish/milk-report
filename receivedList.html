@@ -25,12 +25,21 @@
         </li>
     </ul>
     
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            <blockquote class='blockquote mb-0'>
-                Total Amount:-
-            </blockquote>
-            <p class='text-muted mb-0'>{{total}}</p>
-        </li>
-    </ul>
-</div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td scope="row">
+                    <blockquote class='blockquote mb-0'>
+                        {{customer.name}}
+                    </blockquote>
+                </td>
+                <td class='text-right justify-content-end'>
+                    <h6 class='mb-0 mt-3'>
+                        {{total}}
+                    </h6>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
