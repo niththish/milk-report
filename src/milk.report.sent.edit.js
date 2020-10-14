@@ -1,11 +1,11 @@
 angular.module('milkReport')
-.controller('senteditController',['$scope',senteditController])
+.controller('senteditController',['$scope','$stateParams','$http',senteditController])
 .component('senteditComponent',{
     templateUrl:'sentEdit.html',
     controller:'senteditController',
 })
 
-function senteditController($scope){
+function senteditController($scope,$stateParams,$http){
     $scope.id=$stateParams.id;
     $scope.phone;
     $scope.amount;
