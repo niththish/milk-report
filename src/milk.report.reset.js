@@ -9,7 +9,7 @@ function resetController($scope,$http){
 
     $scope.reset=function(){
         $http.put('https://milk-report.herokuapp.com/reset').success(function(data){
-        $scope.details=data;
+        $scope.details="Reseted to default";
         
     })
     }
