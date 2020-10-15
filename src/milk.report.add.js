@@ -17,6 +17,9 @@ function addController($scope,$http){
 
         $http.post('https://milk-report.herokuapp.com/add',JSON.stringify(data)).success(function(data){
             $scope.data=data;
+            $scope.customernumber="";
+            $scope.customername="";
+            
         })
     }
 }
