@@ -13,10 +13,7 @@
                 <input class="form-control"  name='phone' ng-model="phone" readonly>
             </div>
     
-            <div class="form-group col-12 " >
-                <textarea class="form-control" rows="5" placeholder="Enter your Message" name='text' ng-model="message" required></textarea>
-                <span id='error' ng-show="myForm.text.$touched && myForm.text.$error.required">message is required.</span>
-            </div>
+            
     
             <div class="form-group col-12 " >
                 <input class="form-control" type='text' placeholder='Enter the amount to be paid' name='amount' ng-model="amount" required>
@@ -26,7 +23,7 @@
             <div class="form-group col-12 " >
                 <input ng-click="sendCustomer()" type='submit' 
                 class="btn text-white btn-block btnColor" value="Send"
-                ng-disabled="myForm.text.$untouched || (myForm.message.$touched && myForm.text.$invalid)">
+                ng-disabled="myForm.amount.$invalid">
             </div>
     
         </form>    
